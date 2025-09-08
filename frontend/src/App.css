@@ -1,34 +1,189 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Veyura Brand Colors - Professional Tech Palette */
+:root {
+  /* Backgrounds */
+  --bg-page: #0a0e1a;                       /* Deep navy background */
+  --bg-card: #1a1f2e;                       /* Dark card backgrounds */
+  --bg-light: #f8f9fa;                      /* Light backgrounds */
+  --bg-section: #111827;                    /* Section backgrounds */
+  
+  /* Text */
+  --text-primary: #ffffff;                  /* White primary text */
+  --text-secondary: #9ca3af;                /* Gray supporting text */
+  --text-muted: #6b7280;                    /* Muted gray text */
+  --text-inverse: #0a0e1a;                  /* Dark text on light backgrounds */
+  
+  /* Brand Colors */
+  --brand-primary: #3b82f6;                 /* Professional blue */
+  --brand-accent: #f59e0b;                  /* Golden accent */
+  --brand-hover: rgba(59, 130, 246, 0.8);  /* Blue hover state */
+  --brand-active: rgba(59, 130, 246, 0.6); /* Blue active state */
+  
+  /* Borders */
+  --border-light: rgba(156, 163, 175, 0.2); /* Subtle borders */
+  --border-medium: rgba(156, 163, 175, 0.3); /* Standard borders */
+  --border-strong: #9ca3af;                 /* Strong borders */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+* {
+  margin: 0;  
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
-.App-link {
-    color: #61dafb;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+main {
+  flex: 1;
+}
+
+/* Typography System */
+.heading-1 { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 900; 
+  font-size: clamp(3rem, 5vw, 5rem); 
+  line-height: 0.9; 
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.heading-2 { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 800; 
+  font-size: clamp(2rem, 4vw, 3rem); 
+  line-height: 1.1; 
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.heading-3 { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 700; 
+  font-size: clamp(1.5rem, 3vw, 2rem); 
+  line-height: 1.2; 
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.body-large { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 400; 
+  font-size: 1.25rem; 
+  line-height: 1.6; 
+  color: var(--text-secondary); 
+}
+
+.body-medium { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 400; 
+  font-size: 1rem; 
+  line-height: 1.5; 
+  color: var(--text-secondary); 
+}
+
+/* Button Styles */
+.btn-primary {
+  background: var(--brand-primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 10rem;
+  padding: 1rem 2rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: var(--brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brand-accent);
+  border: 2px solid var(--brand-accent);
+  border-radius: 10rem;
+  padding: 1rem 2rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: var(--brand-accent);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+}
+
+/* Container System */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+/* Card Styles */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--border-medium);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-height: 52px;
+  }
 }
