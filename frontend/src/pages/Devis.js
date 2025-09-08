@@ -31,7 +31,7 @@ const Devis = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Construction du message email
     const emailSubject = encodeURIComponent(`Demande de devis - ${formData.nom}`);
     const emailBody = encodeURIComponent(`
@@ -53,9 +53,9 @@ Demande envoyée depuis le site Veyura
 
     // Ouverture du client email
     window.location.href = `mailto:contact@veyura.com?subject=${emailSubject}&body=${emailBody}`;
-    
+
     setIsSubmitted(true);
-    
+
     // Reset form après 3 secondes
     setTimeout(() => {
       setIsSubmitted(false);
@@ -119,7 +119,7 @@ Demande envoyée depuis le site Veyura
               <p className="info-description">
                 Plus vous nous donnez d'informations, plus notre devis sera précis et adapté à vos besoins.
               </p>
-              
+
               <div className="contact-info">
                 <h3>Nous Contacter Directement</h3>
                 <div className="contact-methods">
@@ -155,7 +155,11 @@ Demande envoyée depuis le site Veyura
 
             <div className="form-wrapper">
               {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="devis-form">
+                <form
+                  className="devis-form"
+                  action="https://formspree.io/f/mldwavrz"
+                  method="POST"
+                >
                   <div className="form-group">
                     <label htmlFor="nom" className="form-label">
                       <User size={18} />
@@ -165,8 +169,6 @@ Demande envoyée depuis le site Veyura
                       type="text"
                       id="nom"
                       name="nom"
-                      value={formData.nom}
-                      onChange={handleInputChange}
                       required
                       className="form-input"
                       placeholder="Votre nom et prénom"
@@ -183,8 +185,6 @@ Demande envoyée depuis le site Veyura
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
                         required
                         className="form-input"
                         placeholder="votre@email.com"
@@ -200,69 +200,10 @@ Demande envoyée depuis le site Veyura
                         type="tel"
                         id="telephone"
                         name="telephone"
-                        value={formData.telephone}
-                        onChange={handleInputChange}
                         className="form-input"
                         placeholder="06 12 34 56 78"
                       />
                     </div>
-                  </div>
-
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="typeProjet" className="form-label">
-                        Type de projet *
-                      </label>
-                      <select
-                        id="typeProjet"
-                        name="typeProjet"
-                        value={formData.typeProjet}
-                        onChange={handleInputChange}
-                        required
-                        className="form-select"
-                      >
-                        <option value="">Sélectionnez un type</option>
-                        {projectTypes.map((type) => (
-                          <option key={type} value={type}>{type}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="budget" className="form-label">
-                        Budget envisagé
-                      </label>
-                      <select
-                        id="budget"
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleInputChange}
-                        className="form-select"
-                      >
-                        <option value="">Sélectionnez une fourchette</option>
-                        {budgetRanges.map((range) => (
-                          <option key={range} value={range}>{range}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="delai" className="form-label">
-                      Délai souhaité
-                    </label>
-                    <select
-                      id="delai"
-                      name="delai"
-                      value={formData.delai}
-                      onChange={handleInputChange}
-                      className="form-select"
-                    >
-                      <option value="">Sélectionnez un délai</option>
-                      {timeframes.map((timeframe) => (
-                        <option key={timeframe} value={timeframe}>{timeframe}</option>
-                      ))}
-                    </select>
                   </div>
 
                   <div className="form-group">
@@ -273,12 +214,10 @@ Demande envoyée depuis le site Veyura
                     <textarea
                       id="message"
                       name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
                       required
                       rows="6"
                       className="form-textarea"
-                      placeholder="Décrivez votre projet en détail : objectifs, fonctionnalités souhaitées, public cible, contraintes particulières..."
+                      placeholder="Décrivez votre projet en détail..."
                     ></textarea>
                   </div>
 
