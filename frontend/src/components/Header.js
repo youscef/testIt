@@ -108,7 +108,7 @@ const Header = () => {
           font-weight: 900;
           font-size: 1.75rem;
           color: var(--brand-primary);
-          background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+          background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
