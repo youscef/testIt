@@ -96,8 +96,8 @@ main {
 
 /* Button Styles */
 .btn-primary {
-  background: var(--brand-primary);
-  color: var(--text-primary);
+  background: var(--brand-accent);
+  color: var(--text-inverse);
   border: none;
   border-radius: 10rem;
   padding: 1rem 2rem;
@@ -115,15 +115,15 @@ main {
 }
 
 .btn-primary:hover {
-  background: var(--brand-hover);
+  background: #ea580c;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--brand-accent);
-  border: 2px solid var(--brand-accent);
+  color: var(--brand-secondary);
+  border: 2px solid var(--brand-secondary);
   border-radius: 10rem;
   padding: 1rem 2rem;
   font-family: 'Inter', sans-serif;
@@ -140,10 +140,10 @@ main {
 }
 
 .btn-secondary:hover {
-  background: var(--brand-accent);
+  background: var(--brand-secondary);
   color: var(--text-inverse);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3);
 }
 
 /* Container System */
