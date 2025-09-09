@@ -1,27 +1,28 @@
-/* Veyura Brand Colors - Professional Tech Palette */
+/* Veyura Brand Colors - Electric Blue & Turquoise Palette */
 :root {
   /* Backgrounds */
-  --bg-page: #0a0e1a;                       /* Deep navy background */
-  --bg-card: #1a1f2e;                       /* Dark card backgrounds */
-  --bg-light: #f8f9fa;                      /* Light backgrounds */
-  --bg-section: #111827;                    /* Section backgrounds */
+  --bg-page: #ffffff;                       /* White background */
+  --bg-card: #ffffff;                       /* White card backgrounds */
+  --bg-light: #ffffff;                      /* Light backgrounds */
+  --bg-section: #f8fafc;                    /* Very light section backgrounds */
   
   /* Text */
-  --text-primary: #ffffff;                  /* White primary text */
-  --text-secondary: #9ca3af;                /* Gray supporting text */
-  --text-muted: #6b7280;                    /* Muted gray text */
-  --text-inverse: #0a0e1a;                  /* Dark text on light backgrounds */
+  --text-primary: #1e293b;                  /* Dark gray primary text */
+  --text-secondary: #64748b;                /* Medium gray supporting text */
+  --text-muted: #94a3b8;                    /* Light gray muted text */
+  --text-inverse: #ffffff;                  /* White text on dark backgrounds */
   
   /* Brand Colors */
-  --brand-primary: #3b82f6;                 /* Professional blue */
-  --brand-accent: #f59e0b;                  /* Golden accent */
-  --brand-hover: rgba(59, 130, 246, 0.8);  /* Blue hover state */
-  --brand-active: rgba(59, 130, 246, 0.6); /* Blue active state */
+  --brand-primary: #2563eb;                 /* Electric blue */
+  --brand-secondary: #22d3ee;               /* Turquoise clair */
+  --brand-accent: #f97316;                  /* Orange chaud pour CTA */
+  --brand-hover: rgba(37, 99, 235, 0.8);   /* Electric blue hover state */
+  --brand-active: rgba(37, 99, 235, 0.6);  /* Electric blue active state */
   
   /* Borders */
-  --border-light: rgba(156, 163, 175, 0.2); /* Subtle borders */
-  --border-medium: rgba(156, 163, 175, 0.3); /* Standard borders */
-  --border-strong: #9ca3af;                 /* Strong borders */
+  --border-light: rgba(30, 41, 59, 0.1);   /* Subtle borders */
+  --border-medium: rgba(30, 41, 59, 0.2);  /* Standard borders */
+  --border-strong: #64748b;                 /* Strong borders */
 }
 
 * {
