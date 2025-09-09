@@ -325,86 +325,23 @@ Demande envoyée depuis le site Veyura
           min-height: 100vh;
         }
 
-        /* Hero Section avec style du visuel call-to-action */
+        /* Hero Section */
         .devis-hero {
-          position: relative;
-          padding: 8rem 0 6rem;
+          background: linear-gradient(135deg, var(--bg-page), var(--bg-section));
+          padding: 8rem 0 4rem;
           text-align: center;
-          overflow: hidden;
-          min-height: 70vh;
-          display: flex;
-          align-items: center;
-        }
-
-        .hero-background {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -2;
-        }
-
-        .hero-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .hero-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, rgba(245, 158, 11, 0.8), rgba(59, 130, 246, 0.6));
-          z-index: -1;
         }
 
         .hero-content {
-          position: relative;
-          z-index: 1;
-          max-width: 800px;
+          max-width: 600px;
           margin: 0 auto;
-        }
-
-        .hero-content h1 {
-          color: white;
-          font-size: clamp(2rem, 4vw, 3rem);
-          margin-bottom: 1rem;
         }
 
         .hero-description {
           font-size: 1.25rem;
-          color: rgba(255, 255, 255, 0.9);
+          color: var(--text-secondary);
           line-height: 1.6;
-          margin-bottom: 2rem;
-        }
-
-        .hero-contact-info {
-          display: flex;
-          justify-content: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-        }
-
-        .contact-item-hero {
-          background: rgba(255, 255, 255, 0.1);
-          padding: 0.75rem 1.5rem;
-          border-radius: 25px;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          transition: transform 0.3s ease;
-        }
-
-        .contact-item-hero:hover {
-          transform: translateY(-2px);
-        }
-
-        .contact-item-hero span {
-          color: white;
-          font-weight: 500;
-          font-size: 1rem;
+          margin-top: 1rem;
         }
 
         /* Form Section */
