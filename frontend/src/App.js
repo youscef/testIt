@@ -20,6 +20,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/realisations" element={<Realisations />} />
             <Route path="/devis" element={<Devis />} />
+            <Route path="/facebook-ads" element={<FacebookAdsPage />} />
           </Routes>
         </main>
         <Footer />
