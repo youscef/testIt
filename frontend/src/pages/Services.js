@@ -20,7 +20,7 @@ const Services = () => {
         "Contenu optimisé pour votre secteur",
         "Intégration de vos réseaux sociaux"
       ],
-      price: "À partir de 890€"
+      price: "Sur devis"
     },
     {
       icon: <Palette size={48} />,
@@ -44,7 +44,7 @@ const Services = () => {
         "Stratégie de mots-clés",
         "Suivi des performances"
       ],
-      price: "À partir de 450€"
+      price: "Sur devis"
     },
     {
       icon: <Smartphone size={48} />,
@@ -80,7 +80,7 @@ const Services = () => {
         "Protection contre les attaques",
         "Monitoring 24/7"
       ],
-      price: "À partir de 290€"
+      price: "Sur devis"
     }
   ];
 
