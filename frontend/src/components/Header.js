@@ -149,7 +149,7 @@ const Header = () => {
         }
 
         .contact-link:hover {
-          color: var(--brand-accent);
+          color: var(--brand-secondary);
         }
 
         .mobile-menu-button {
