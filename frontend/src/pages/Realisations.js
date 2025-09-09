@@ -81,14 +81,43 @@ const Realisations = () => {
 
   return (
     <div className="realisations">
-      {/* Hero Section */}
+      {/* Hero Section avec l'image du visuel exemples */}
       <section className="realisations-hero">
+        <div className="hero-background">
+          <img 
+            src="https://images.unsplash.com/photo-1531973576160-7125cd663d86" 
+            alt="Modern office"
+            className="hero-image"
+          />
+          <div className="hero-overlay"></div>
+        </div>
         <div className="container">
           <div className="hero-content">
             <h1 className="heading-1">Nos Réalisations</h1>
+            <h2 className="hero-subtitle">Restaurant, agence auto, spa, boutique...</h2>
             <p className="hero-description">
-              Découvrez nos projets récents et l'expertise Veyura au service de différents secteurs d'activité
+              Veyura crée le site qui vous ressemble
             </p>
+            
+            {/* Mockups showcase dans le hero */}
+            <div className="hero-mockups">
+              <div className="hero-mockup-item">
+                <div className="hero-mockup-screen restaurant-mockup"></div>
+                <span>Restaurant</span>
+              </div>
+              <div className="hero-mockup-item">
+                <div className="hero-mockup-screen auto-mockup"></div>
+                <span>Auto</span>
+              </div>
+              <div className="hero-mockup-item">
+                <div className="hero-mockup-screen spa-mockup"></div>
+                <span>Spa</span>
+              </div>
+              <div className="hero-mockup-item">
+                <div className="hero-mockup-screen boutique-mockup"></div>
+                <span>Boutique</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,8 +181,16 @@ const Realisations = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section avec fond professionnel */}
       <section className="stats-section">
+        <div className="stats-background">
+          <img 
+            src="https://images.unsplash.com/photo-1541462608143-67571c6738dd" 
+            alt="Professional workspace"
+            className="stats-bg-image"
+          />
+          <div className="stats-overlay"></div>
+        </div>
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
@@ -181,23 +218,122 @@ const Realisations = () => {
           min-height: 100vh;
         }
 
-        /* Hero Section */
+        /* Hero Section avec style du visuel exemples */
         .realisations-hero {
-          background: linear-gradient(135deg, var(--bg-page), var(--bg-section));
-          padding: 8rem 0 4rem;
+          position: relative;
+          padding: 8rem 0 6rem;
           text-align: center;
+          overflow: hidden;
+          min-height: 80vh;
+          display: flex;
+          align-items: center;
+        }
+
+        .hero-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+        }
+
+        .hero-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(10, 14, 26, 0.7), rgba(59, 130, 246, 0.4));
+          z-index: -1;
         }
 
         .hero-content {
+          position: relative;
+          z-index: 1;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .hero-content h1 {
+          color: white;
+          margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+          font-size: clamp(1.8rem, 3vw, 2.5rem);
+          font-weight: 700;
+          color: white;
+          margin-bottom: 0.5rem;
+        }
+
+        .hero-description {
+          font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+          font-weight: 600;
+          color: var(--brand-accent);
+          margin-bottom: 3rem;
+        }
+
+        .hero-mockups {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 2rem;
           max-width: 600px;
           margin: 0 auto;
         }
 
-        .hero-description {
-          font-size: 1.25rem;
-          color: var(--text-secondary);
-          line-height: 1.6;
-          margin-top: 1rem;
+        .hero-mockup-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          padding: 1.5rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease;
+        }
+
+        .hero-mockup-item:hover {
+          transform: translateY(-5px);
+        }
+
+        .hero-mockup-screen {
+          width: 80px;
+          height: 60px;
+          border-radius: 8px;
+          border: 2px solid white;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .restaurant-mockup {
+          background: linear-gradient(135deg, #dc2626, #7c2d12);
+        }
+
+        .auto-mockup {
+          background: linear-gradient(135deg, #1f2937, #4b5563);
+        }
+
+        .spa-mockup {
+          background: linear-gradient(135deg, #059669, #065f46);
+        }
+
+        .boutique-mockup {
+          background: linear-gradient(135deg, #7c3aed, #5b21b6);
+        }
+
+        .hero-mockup-item span {
+          color: white;
+          font-weight: 600;
+          font-size: 0.9rem;
         }
 
         /* Filter Section */
@@ -361,10 +497,36 @@ const Realisations = () => {
           border: 1px solid var(--border-light);
         }
 
-        /* Stats Section */
+        /* Stats Section avec fond */
         .stats-section {
-          background: var(--bg-section);
-          padding: 5rem 0;
+          position: relative;
+          padding: 8rem 0;
+          overflow: hidden;
+        }
+
+        .stats-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+        }
+
+        .stats-bg-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .stats-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(10, 14, 26, 0.8), rgba(59, 130, 246, 0.4));
+          z-index: -1;
         }
 
         .stats-grid {
@@ -372,22 +534,34 @@ const Realisations = () => {
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           gap: 2rem;
           text-align: center;
+          position: relative;
+          z-index: 1;
         }
 
         .stat-item {
           padding: 2rem 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+          transform: translateY(-10px);
         }
 
         .stat-number {
           font-size: 3rem;
           font-weight: 900;
-          color: var(--brand-primary);
+          color: var(--brand-accent);
           margin-bottom: 0.5rem;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .stat-label {
           font-size: 1.125rem;
-          color: var(--text-secondary);
+          color: white;
           font-weight: 500;
         }
 
@@ -406,6 +580,10 @@ const Realisations = () => {
             flex-direction: column;
             align-items: flex-start;
             gap: 0.5rem;
+          }
+
+          .hero-mockups {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
       `}</style>

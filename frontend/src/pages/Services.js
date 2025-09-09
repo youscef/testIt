@@ -86,14 +86,36 @@ const Services = () => {
 
   return (
     <div className="services">
-      {/* Hero Section */}
+      {/* Hero Section avec l'image du visuel services */}
       <section className="services-hero">
+        <div className="hero-background">
+          <img 
+            src="https://images.unsplash.com/photo-1529071242804-840f9a164b8b" 
+            alt="MacBook Pro setup"
+            className="hero-image"
+          />
+          <div className="hero-overlay"></div>
+        </div>
         <div className="container">
           <div className="hero-content">
             <h1 className="heading-1">Nos Services</h1>
             <p className="hero-description">
-              Des solutions digitales complètes pour propulser votre entreprise vers le succès en ligne
+              Nous créons des sites vitrines et e-commerce sur mesure
             </p>
+            <div className="hero-services-icons">
+              <div className="hero-service-icon">
+                <Code size={40} />
+                <span>Sites Web</span>
+              </div>
+              <div className="hero-service-icon">
+                <Smartphone size={40} />
+                <span>Responsive</span>
+              </div>
+              <div className="hero-service-icon">
+                <Search size={40} />
+                <span>SEO</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -130,8 +152,16 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section avec fond moderne */}
       <section className="process-section">
+        <div className="process-background">
+          <img 
+            src="https://images.unsplash.com/photo-1541462608143-67571c6738dd" 
+            alt="Professional workspace"
+            className="process-bg-image"
+          />
+          <div className="process-overlay"></div>
+        </div>
         <div className="container">
           <div className="section-header">
             <h2 className="heading-2">Notre Processus</h2>
@@ -181,23 +211,89 @@ const Services = () => {
           min-height: 100vh;
         }
 
-        /* Hero Section */
+        /* Hero Section avec style du visuel services */
         .services-hero {
-          background: linear-gradient(135deg, var(--bg-page), var(--bg-section));
-          padding: 8rem 0 4rem;
+          position: relative;
+          padding: 8rem 0 6rem;
           text-align: center;
+          overflow: hidden;
+          min-height: 70vh;
+          display: flex;
+          align-items: center;
+        }
+
+        .hero-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+        }
+
+        .hero-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(10, 14, 26, 0.6));
+          z-index: -1;
         }
 
         .hero-content {
-          max-width: 600px;
+          position: relative;
+          z-index: 1;
+          max-width: 800px;
           margin: 0 auto;
         }
 
+        .hero-content h1 {
+          color: white;
+          margin-bottom: 1rem;
+        }
+
         .hero-description {
-          font-size: 1.25rem;
-          color: var(--text-secondary);
+          font-size: 1.5rem;
+          color: white;
           line-height: 1.6;
-          margin-top: 1rem;
+          margin-bottom: 3rem;
+          font-weight: 600;
+        }
+
+        .hero-services-icons {
+          display: flex;
+          justify-content: center;
+          gap: 3rem;
+        }
+
+        .hero-service-icon {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          padding: 2rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease;
+        }
+
+        .hero-service-icon:hover {
+          transform: translateY(-10px);
+        }
+
+        .hero-service-icon span {
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 600;
         }
 
         /* Services Section */
@@ -288,26 +384,73 @@ const Services = () => {
           flex-shrink: 0;
         }
 
-        /* Process Section */
+        /* Process Section avec fond */
         .process-section {
-          background: var(--bg-section);
-          padding: 5rem 0;
+          position: relative;
+          padding: 8rem 0;
+          overflow: hidden;
+        }
+
+        .process-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+        }
+
+        .process-bg-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .process-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(10, 14, 26, 0.8), rgba(10, 14, 26, 0.5));
+          z-index: -1;
         }
 
         .section-header {
           text-align: center;
           margin-bottom: 4rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .section-header h2 {
+          color: white;
+        }
+
+        .section-header p {
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .process-steps {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 2rem;
+          position: relative;
+          z-index: 1;
         }
 
         .process-step {
           text-align: center;
           padding: 2rem 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+          transform: translateY(-10px);
         }
 
         .step-number {
@@ -327,12 +470,12 @@ const Services = () => {
         .step-title {
           font-size: 1.25rem;
           font-weight: 700;
-          color: var(--text-primary);
+          color: white;
           margin-bottom: 1rem;
         }
 
         .step-description {
-          color: var(--text-secondary);
+          color: rgba(255, 255, 255, 0.8);
           line-height: 1.6;
         }
 
@@ -348,6 +491,12 @@ const Services = () => {
 
           .service-icon {
             margin: 0 auto;
+          }
+
+          .hero-services-icons {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
           }
 
           .process-steps {
