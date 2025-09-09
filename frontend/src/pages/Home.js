@@ -124,7 +124,7 @@ const Home = () => {
         /* Hero Section */
         .hero-section {
           position: relative;
-          min-height: 100vh;
+          min-height: 70vh;
           display: flex;
           align-items: center;
           overflow: hidden;
