@@ -98,33 +98,14 @@ Demande envoyée depuis le site Veyura
 
   return (
     <div className="devis">
-      {/* Hero Section avec l'image du visuel call-to-action */}
+      {/* Hero Section */}
       <section className="devis-hero">
-        <div className="hero-background">
-          <img 
-            src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb" 
-            alt="Facebook icons"
-            className="hero-image"
-          />
-          <div className="hero-overlay"></div>
-        </div>
         <div className="container">
           <div className="hero-content">
-            <h1 className="heading-1">Contactez-nous dès aujourd'hui pour votre site web !</h1>
+            <h1 className="heading-1">Demande de Devis</h1>
             <p className="hero-description">
               Parlez-nous de votre projet et recevez un devis personnalisé sous 24h
             </p>
-            <div className="hero-contact-info">
-              <div className="contact-item-hero">
-                <span>📧 contact@veyura.com</span>
-              </div>
-              <div className="contact-item-hero">
-                <span>📞 07 51 19 99 61</span>
-              </div>
-              <div className="contact-item-hero">
-                <span>📍 Lille, France</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
